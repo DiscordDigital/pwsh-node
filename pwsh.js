@@ -17,7 +17,7 @@ module.exports.pwsh = (argCol = {}, onData = (data) => {}) => {
         }
 
         const escape = (arr) => {
-            col = [];
+            let col = [];
             arr.forEach((string)=>{
                 const regex1 = /[^a-zA-Z\d\s_:-]/;
                 const regex2 = /\s/;
