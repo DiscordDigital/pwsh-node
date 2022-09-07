@@ -19,9 +19,9 @@ module.exports.pwsh = (argCol = {}, onData = (data) => {}) => {
         const escape = (arr) => {
             let col = [];
             arr.forEach((string)=>{
-                const regex1 = /[^a-zA-Z\d\s_:-]/;
+                const regex1 = /[^a-zA-Z\d\s_:-]/g;
                 const regex2 = /\s/;
-                string = string.replace(regex1, '^$&');
+                string = string.replaceAll(regex1, '^$&');
                 col.push(regex2.test(string) ? `'${string}'` : string);
             })
             return col.join(' ');
